@@ -12,9 +12,11 @@ RUN apt-get update && apt-get install -y git
 WORKDIR /workspace
 
 # 克隆repo
-RUN git clone https://github.com/oobabooga/text-generation-webui.git
+RUN git clone https://github.com/hiyouga/LLaMA-Efficient-Tuning.git
 # 安装依赖
-RUN cd text-generation-webui && pip install -r requirements.txt
+RUN cd LLaMA-Efficient-Tuning && pip install -r requirements.txt
+# 降级transformers以避免报错
+RUN pip install transformers==4.29.1
 
 # 设置启动脚本
 COPY start.sh .

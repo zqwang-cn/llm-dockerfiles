@@ -13,7 +13,7 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 WORKDIR /workspace
 
 # 克隆repo
-RUN git clone https://github.com/ggerganov/llama.cpp
+RUN git clone https://github.com/ggerganov/llama.cpp.git
 # 安装依赖并编译
 RUN cd llama.cpp && pip install -r requirements.txt && make
 
